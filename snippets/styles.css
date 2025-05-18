@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'); */
+:root{
+    --clr-box: rgba(0, 0, 0, 0.5);
+}
+.theme-light .workspace {
+    backdrop-filter: brightness(1) blur(1px); /* change brightness and blur radius here */
+    background-color: transparent;
+    color: black;
+    --icon-color:black;
+    --icon-color-hover:black;
+    --status-bar-text-color:black;
+    --list-marker-color	:black;
+    font-weight: 500;
+    --nav-item-weight:400;	
+    --clr-box: rgba(255, 255, 255, 0.5);
+}
+.theme-dark .workspace {
+    backdrop-filter: brightness(1) blur(5px);
+    background-color: transparent;
+    color: white;
+    --icon-color:white;
+    --icon-color-hover:white;
+    --status-bar-text-color:white;
+    --list-marker-color	:white;
+    /* font-weight: 500;
+    --nav-item-weight:400; */
+}
+.app-container{ 
+    --background-primary: transparent;
+    --background-secondary: transparent;
+    --divider-width: 0px;
+	background: url(https://images.unsplash.com/photo-1744578413523-33596836891b?q=80&w=1398&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center center; /* This centers the image */
+    font-family: "Lora", serif;
+    /* font-family: "Quicksand", sans-serif; */
+}
+.workspace-tab-header-container-inner,.workspace-tab-header-container, .status-bar{
+    display: none;
+}
+.workspace-ribbon,.workspace-split,.workspace-ribbon::before,.sidebar-toggle-button::before,.workspace-tab-header-container,.status-bar,.tree-item-children,.workspace-sidedock-vault-profile,.titlebar-button-container { /* inheriting */
+    background-color: inherit !important;
+    border: none !important;
+}
+.is-hidden-frameless:not(.is-fullscreen).is-focused .workspace-tab-header-container{
+    display: flex;
+}
+.is-hidden-frameless:not(.is-fullscreen).is-focused .status-bar{
+    display: block;
+}
+.is-hidden-frameless:not(.is-fullscreen).is-focused .cm-sizer{
+    margin: auto;
+}
+/* if you want glass box inside the picture, customize ofc! */
+.cm-scroller{
+    scrollbar-width: none;
+    padding: 1rem !important;
+    margin-left: 0.5rem;
+}
+.cm-sizer{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 12px;
+    border-radius: 8px;
+    margin: 3rem 0;
+    background-color: var(--clr-box);
+    padding: 1rem 2rem;
+}
+@media(max-width:750px){
+.app-container{
+    --font-text-size:0.85rem;	
+}
+.cm-sizer{
+    padding: 0.5rem 1rem;
+    margin: initial;
+}
+}
